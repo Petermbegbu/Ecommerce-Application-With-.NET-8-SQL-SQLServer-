@@ -1,8 +1,8 @@
-using Ecommerce.Models;
+using CRUDAPP.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Ecommerce.Controllers
+namespace CRUDAPP.Controllers
 {
     public class HomeController : Controller
     {
