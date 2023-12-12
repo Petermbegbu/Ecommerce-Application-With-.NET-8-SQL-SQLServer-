@@ -1,4 +1,4 @@
-using CRUDAPP.DBContext;
+using Ecommerce.DBContext;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

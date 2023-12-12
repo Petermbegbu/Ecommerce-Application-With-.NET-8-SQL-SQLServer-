@@ -1,8 +1,8 @@
-﻿using CRUDAPP.DBContext;
-using CRUDAPP.Models;
+﻿using Ecommerce.DBContext;
+using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CRUDAPP.Controllers
+namespace Ecommerce.Controllers
 {
     public class CategoryController : Controller
     {
@@ -18,6 +18,20 @@ namespace CRUDAPP.Controllers
             List<Category> categoriesList = _dbContext.Categories.ToList();
 
             return View(categoriesList);
+        }
+
+        public IActionResult Create() {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddCategory(Category formValues)
+        { 
+            _dbContext.Categories.Add(formValues);
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

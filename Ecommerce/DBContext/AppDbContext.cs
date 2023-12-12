@@ -1,12 +1,12 @@
-﻿using CRUDAPP.Models;
+﻿using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CRUDAPP.DBContext
+namespace Ecommerce.DBContext
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
-        { 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
         }
 
         public DbSet<Category> Categories { get; set; }
