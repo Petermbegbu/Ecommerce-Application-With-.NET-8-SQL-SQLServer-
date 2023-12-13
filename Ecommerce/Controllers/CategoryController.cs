@@ -28,10 +28,14 @@ namespace Ecommerce.Controllers
         [HttpPost]
         public IActionResult AddCategory(Category formValues)
         { 
-            _dbContext.Categories.Add(formValues);
-            _dbContext.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _dbContext.Categories.Add(formValues);
+                _dbContext.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-            return RedirectToAction("Index");
+            return View("Create");
         }
     }
 }
